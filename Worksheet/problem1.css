@@ -1,0 +1,23 @@
+#container {
+  background-color: #f3f4f6; /* light gray */
+  padding: 24px;
+}
+
+.heading {
+  color: #1e40af; /* blue */
+  margin: 0 0 12px;
+}
+
+
+.intro {
+  color: #16a34a; /* green */
+  margin: 0 0 16px;
+}
+
+
+.card p {
+  color: #374151; /* dark gray */
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 6px;
+}
