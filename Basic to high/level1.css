@@ -1,0 +1,2 @@
+.container{display:flex;gap:10px;padding:20px;}
+    .box{width:80px;height:80px;background:rgb(84, 221, 152);color:#070606;display:flex;align-items:center;justify-content:center;}
