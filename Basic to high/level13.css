@@ -1,0 +1,4 @@
+.container{display:flex;gap:20px;padding:20px;align-items:center;}
+    .left{flex:1;}
+    .right{width:200px;height:150px;background:#ddd;display:flex;align-items:center;justify-content:center;}
+ 
