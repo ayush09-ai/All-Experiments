@@ -1,0 +1,2 @@
+ .container{display:flex;flex-direction:column;gap:10px;padding:20px;height:300px;}
+    .box{height:60px;background:seagreen;color:#fff;display:flex;align-items:center;justify-content:center;}
