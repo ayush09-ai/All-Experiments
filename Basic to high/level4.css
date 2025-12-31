@@ -1,0 +1,2 @@
+.container{display:flex;justify-content:space-between;padding:20px;height:120px;align-items:center;background:#f3f3f3;}
+    .box{width:70px;height:70px;background:#7373b9;color:#181717;display:flex;align-items:center;justify-content:center;border-radius:6px;}
