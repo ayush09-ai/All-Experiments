@@ -1,63 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix Style UI</title>
 
     <!-- External CSS Link -->
-    <link rel="stylesheet" href="filmyspare.css">
+    <!-- <link rel="stylesheet" href="filmyspare.css"> -->
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* BODY */
+        body {
+            background-color: #161916;
+            color: #fff;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            position: absolute;
+            width: 100%;
+        }
+
+        .logo {
+            color: rgb(17, 194, 210);
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .sign-in {
+            background-color: #1bc6cb;
+            border: none;
+            padding: 8px 18px;
+            color: rgb(1, 15, 20);
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7),
+                    rgba(0, 0, 0, 0.7)), url("movie imag.jpg") center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            color: rgb(9, 190, 245);
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h2 {
+            color: rgb(19, 190, 206);
+            font-size: 1.5rem;
+            font-weight: normal;
+            margin-bottom: 30px;
+        }
+
+        .hero-content p {
+            color: rgb(21, 221, 224);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        /* EMAIL FORM */
+        .form {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .form input {
+            padding: 15px;
+            font-size: 16px;
+            width: 280px;
+            border: none;
+            outline: none;
+        }
+
+        .form button {
+            background-color: #ef0db3;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* MOVIES SECTION */
+        .movies-section {
+            padding: 60px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 50px;
+            color: rgb(0, 242, 255);
+        }
+
+        .movie-row {
+            display: flex;
+            gap: 100px;
+            flex-wrap: wrap;
+        }
+
+        .movie-card {
+            width: 220px;
+            text-align: center;
+        }
+
+        .movie-card img {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+
+        .movie-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .movie-card p {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content h2 {
+                font-size: 1.2rem;
+            }
+
+            .movie-row {
+                justify-content: center;
+            }
+
+            .movies-section {
+                padding: 60px;
+            }
+
+
+
+
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-    <div class="logo">FilmySpare</div>
-    <button class="sign-in">Sign In</button>
-</div>
-
-<!-- HERO SECTION -->
-<section class="hero">
-    <div class="hero-content">
-        <h1>New trending movies, TV shows and more</h1>
-        <h2>Watch anywhere. At just Rs.199/- month</h2>
-        <p>Ready to watch? Enter your email to get started.</p>
-
-        <div class="form">
-            <input type="email" placeholder="Email address">
-            <button>Get Started ></button>
-        </div>
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="logo">FilmySpare</div>
+        <button class="sign-in">Sign In</button>
     </div>
-</section>
 
-<!-- MOVIES SECTION -->
-<section class="movies-section">
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>New trending movies, TV shows and more</h1>
+            <h2>Watch anywhere. At just Rs.199/- month</h2>
+            <p>Ready to watch? Enter your email to get started.</p>
 
-    <h2 class="section-title">Trending Movies</h2>
-
-    <div class="movie-row">
-        <div class="movie-card">
-            <img src="movie1.jpg" alt="Movie 1">
-            <p>Action Hero</p>
+            <div class="form">
+                <input type="email" placeholder="Email address">
+                <button>Get Started ></button>
+            </div>
         </div>
+    </section>
 
-        <div class="movie-card">
-            <img src="movie2.avif" alt="Movie 2">
-            <p>Action Thrilling</p>
-        </div>
+    <!-- MOVIES SECTION -->
+    <section class="movies-section">
 
-        <div class="movie-card">
-            <img src="movie3.jpg" alt="Movie 3">
-            <p>Comedy</p>
-        </div>
+        <h2 class="section-title">Trending Movies</h2>
 
-        <div class="movie-card">
-            <img src="movie4.webp" alt="Movie 4">
-            <p>Sci-fi</p>
+        <div class="movie-row">
+            <div class="movie-card">
+                <img src="movie1.jpg" alt="Movie 1">
+                <p>Action Hero</p>
+            </div>
+
+            <div class="movie-card">
+                <img src="movie2.avif" alt="Movie 2">
+                <p>Action Thrilling</p>
+            </div>
+
+            <div class="movie-card">
+                <img src="movie3.jpg" alt="Movie 3">
+                <p>Comedy</p>
+            </div>
+
+            <div class="movie-card">
+                <img src="movie4.webp" alt="Movie 4">
+                <p>Sci-fi</p>
+            </div>
         </div>
-     </div>
-</section>
+    </section>
 
 </body>
+
 </html>
