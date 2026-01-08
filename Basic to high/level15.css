@@ -1,0 +1,2 @@
+.grid{display:flex;flex-wrap:wrap;gap:10px;width:220px;padding:20px;}
+    .tile{width:100px;height:100px;background:#ff4757;color:#fff;display:flex;align-items:center;justify-content:center;border-radius:6px;}
