@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head >
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix Style UI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <!-- External CSS Link -->
-    <!-- <link rel="stylesheet" href="filmyspare.css"> -->
-    <style>
-        /* RESET */
+      <style>
+       
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family:  'Poppins', sans-serif;
         }
 
-        /* BODY */
         body {
             background-color: #0a0a0a;
             color: #fff;
         }
 
-        /* NAVBAR */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -49,7 +46,6 @@
             cursor: pointer;
         }
 
-        /* HERO SECTION */
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.7),
@@ -80,7 +76,6 @@
             margin-bottom: 20px;
         }
 
-        /* EMAIL FORM */
         .form {
             display: flex;
             justify-content: center;
@@ -105,9 +100,9 @@
             cursor: pointer;
         }
 
-        /* MOVIES SECTION */
         .movies-section {
             padding: 60px;
+             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .section-title {
@@ -116,11 +111,11 @@
             color: rgb(0, 242, 255);
         }
 
-        .movie-row {
-            display: flex;
-            gap: 100px;
-            flex-wrap: wrap;
-        }
+       .movie-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
 
         .movie-card {
             width: 220px;
@@ -143,7 +138,54 @@
             font-size: 16px;
         }
 
-        /* RESPONSIVE */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #939090;
+            border-top: 1px solid rgba(250, 248, 248, 0.1);
+ }
+
+ .faq-section {
+    padding: 70px 12%;
+    background-color: #000;
+}
+
+.faq-title {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.faq-item {
+    background-color: #2d2d2d;
+    margin-bottom: 10px;
+    border-radius: 2px;
+}
+
+.faq-question {
+    list-style: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-answer {
+    padding: 0 20px 20px;
+    font-size: 16px;
+    color: #ddd;
+}
+
+/* + to × toggle */
+.faq-item[open] .faq-question span {
+    transform: rotate(45deg);
+}
         @media (max-width: 768px) {
             .hero-content h1 {
                 font-size: 2.2rem;
@@ -162,23 +204,23 @@
             }
 
             .movies-section {
-             padding: 60px;
-          border-top: 1px solid rgba(255,255,255,0.1);
+                padding: 60px;
+                border-top: 1px solid rgba(255,255,255,0.1);
              }
 
-        }
+            
+
+  }
     </style>
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
     <div class="navbar">
         <div class="logo">FilmySpare</div>
         <button class="sign-in">Sign In</button>
     </div>
 
-    <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-content">
             <h1>New trending movies, TV shows and more</h1>
@@ -200,28 +242,38 @@
         <div class="movie-row">
             <div class="movie-card">
                 <img src="movie1.jpg" alt="Movie 1">
-                <p>Action Hero</p>
+                <p>Dhurandhar</p>
             </div>
 
             <div class="movie-card">
                 <img src="movie2.avif" alt="Movie 2">
-                <p>Action Thrilling</p>
+                <p>120 Bahadur</p>
             </div>
 
             <div class="movie-card">
-                <img src="movie3.jpg" alt="Movie 3">
-                <p>Comedy</p>
+                <img src="movie3.webp" alt="Movie 3">
+                <p>Avatar:Fire and Ash</p>
             </div>
 
             <div class="movie-card">
                 <img src="movie4.webp" alt="Movie 4">
-                <p>Sci-fi</p>
+                <p>Mission Impossible</p>
             </div>
-        </div>
-    </section>
 
-    <!-- TV SHOWS SECTION -->
-<section class="movies-section">
+            <div class="movie-card">
+                 <img src="movie5.webp" alt="Movie 5">
+                 <p>Tu Meri Main Tera Main Tera Tu Meri</p>
+             </div>
+
+             <div class="movie-card">
+                 <img src="movie6.jpg" alt="Movie 6">
+                 <p>F1-The Movie</p>
+             </div>
+         </div>
+    </section>
+ 
+ <!-- WEB SERIES SECTION -->
+ <section class="movies-section">
 
     <h2 class="section-title">Trending Web series</h2>
 
@@ -245,10 +297,21 @@
             <img src="TV show4.jpg" alt="TV Show 4">
             <p>Panchayat</p>
         </div>
+
+        <div class="movie-card">
+            <img src="TV show5.avif" alt="TV Show 5">
+            <p>The Family Man season:3</p>
+        </div>
+
+         <div class="movie-card">
+            <img src="Tv show6.png" alt="TV Show 6">
+            <p>Special ops season:2</p>
+        </div>
     </div>
 </section>
 
-<section class="movies-section">
+ <!-- TRENDING SHOWS SECTION -->
+ <section class="movies-section">
 
     <h2 class="section-title"> Trending shows</h2>
 
@@ -272,11 +335,21 @@
             <img src="show4.jpg" alt="TV Show 4">
             <p>Kota Factory</p>
         </div>
+
+        <div class="movie-card">
+            <img src="show5.jpg" alt="TV Show 5">
+            <p>Bhokaal season:2</p>
+        </div>
+
+        <div class="movie-card">
+            <img src="show6.jpg" alt="TV Show 6">
+            <p>Taaza Khabar season:2</p>
+        </div>
     </div>
 </section>
 
-
-<section class="movies-section">
+ <!-- KIDS TV SHOWS SECTION -->
+ <section class="movies-section">
 
     <h2 class="section-title"> Kids TV Shows</h2>
 
@@ -298,10 +371,93 @@
 
         <div class="movie-card">
             <img src="kid show4.jpg" alt="Kids TV Shows 4">
-            <p>Zootopia-2</p>
+            <p>Zootopia 2</p>
+        </div>
+
+        <div class="movie-card">
+            <img src="kid show5.jpg" alt="Kids TV Shows 5">
+            <p>Incredibles 2</p>
+        </div>
+
+        <div class="movie-card">
+            <img src="kid show6.jpg" alt="Kids TV Shows 6">
+            <p>Mufasa: The Lion King</p>
         </div>
     </div>
 </section>
+
+<section class="faq-section">
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+
+    <details class="faq-item">
+        <summary class="faq-question">
+            What is FilmySpare?
+            <span>+</span>
+        </summary>
+        <div class="faq-answer">
+            <p>
+                FilmySpare is a streaming-style platform UI that allows users to explore
+                movies, TV shows, and web series anytime, anywhere.
+            </p>
+        </div>
+    </details>
+
+    <details class="faq-item">
+        <summary class="faq-question">
+            How much does FilmySpare cost?
+            <span>+</span>
+        </summary>
+        <div class="faq-answer">
+            <p>
+                FilmySpare plans start at just ₹199 per month with unlimited access
+                to movies and shows.
+            </p>
+        </div>
+    </details>
+
+    <details class="faq-item">
+        <summary class="faq-question">
+            Where can I watch?
+            <span>+</span>
+        </summary>
+        <div class="faq-answer">
+            <p>
+                You can watch FilmySpare on mobile phones, tablets, laptops,
+                desktops, and smart TVs.
+            </p>
+        </div>
+    </details>
+
+    <details class="faq-item">
+        <summary class="faq-question">
+            How do I cancel?
+            <span>+</span>
+        </summary>
+        <div class="faq-answer">
+            <p>
+                You can cancel your membership anytime from your account settings.
+                There are no cancellation fees.
+            </p>
+        </div>
+    </details>
+
+    <details class="faq-item">
+        <summary class="faq-question">
+            Is FilmySpare good for kids?
+            <span>+</span>
+        </summary>
+        <div class="faq-answer">
+            <p>
+                Yes, FilmySpare offers a wide range of kid-friendly content with
+                parental controls.
+            </p>
+        </div>
+    </details>
+</section>
+
+<footer class="footer">
+    © 2026 FilmySpare • All Rights Reserved
+</footer>
 
 
 </body>
