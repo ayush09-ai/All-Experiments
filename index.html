@@ -102,7 +102,7 @@
 
         .movies-section {
             padding: 60px;
-             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .section-title {
@@ -112,10 +112,10 @@
         }
 
        .movie-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-}
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
 
         .movie-card {
             width: 220px;
@@ -133,22 +133,73 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
+        @keyframes movieFloat {
+            0%   { transform: translateY(0); }
+            50%  { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        .movie-card {
+            animation: movieFloat 4s ease-in-out infinite;
+        }
+
+        .movie-card:hover {
+            animation-play-state: paused;
+             transform: translateY(-14px);
+        }
+
+
         .movie-card p {
             margin-top: 10px;
             font-size: 16px;
         }
+
+        .movie-glow {
+            position: relative;
+            border-radius: 10px;
+            overflow: visible;
+        }
+
+        .movie-glow::before {
+            content: "";
+            position: absolute;
+            inset: -12px;
+            background: radial-gradient(circle,
+            rgba(0, 242, 255, 0.45),
+            rgba(16, 231, 242, 0.918),
+            transparent 80%);
+            filter: blur(18px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .movie-glow img {
+           width: 100%;
+           border-radius: 8px;
+           transition: transform 0.3s ease;
+        }
+
+        .movie-card:hover .movie-glow img {
+           transform: scale(1.08);
+        }
+
+        .movie-card:hover .movie-glow::before {
+            opacity: 1;
+        }
+
 
         .footer {
             text-align: center;
             padding: 30px;
             color: #939090;
             border-top: 1px solid rgba(250, 248, 248, 0.1);
- }
+        }
 
- .faq-section {
-    padding: 70px 12%;
-    background-color: #000;
-}
+        .faq-section {
+            padding: 70px 12%;
+            background-color: #000;
+        }
 
 .faq-title {
     font-size: 32px;
@@ -182,7 +233,7 @@
     color: #ddd;
 }
 
-/* + to × toggle */
+
 .faq-item[open] .faq-question span {
     transform: rotate(45deg);
 }
@@ -240,33 +291,46 @@
         <h2 class="section-title">Trending Movies</h2>
 
         <div class="movie-row">
-            <div class="movie-card">
-                <img src="movie1.jpg" alt="Movie 1">
-                <p>Dhurandhar</p>
-            </div>
+           <div class="movie-card">
+    <div class="movie-glow">
+        <img src="movie1.jpg" alt="Movie 1">
+    </div>
+    <p>Dhurandhar</p>
+</div>
+
 
             <div class="movie-card">
+                <div class="movie-glow">
                 <img src="movie2.avif" alt="Movie 2">
+                </div>
                 <p>120 Bahadur</p>
             </div>
 
             <div class="movie-card">
+                <div class="movie-glow">
                 <img src="movie3.webp" alt="Movie 3">
+                </div>
                 <p>Avatar:Fire and Ash</p>
             </div>
 
             <div class="movie-card">
+                <div class="movie-glow">
                 <img src="movie4.webp" alt="Movie 4">
+                </div>
                 <p>Mission Impossible</p>
             </div>
 
             <div class="movie-card">
+                <div class="movie-glow">
                  <img src="movie5.webp" alt="Movie 5">
+                 </div>
                  <p>Tu Meri Main Tera Main Tera Tu Meri</p>
              </div>
 
              <div class="movie-card">
+                <div class="movie-glow">
                  <img src="movie6.jpg" alt="Movie 6">
+                 </div>
                  <p>F1-The Movie</p>
              </div>
          </div>
@@ -279,32 +343,44 @@
 
     <div class="movie-row">
         <div class="movie-card">
+            <div class="movie-glow">
             <img src="TV show1.jpg" alt="TV Show 1">
+            </div>
             <p>Money Heist</p>
         </div>
 
         <div class="movie-card">
+            <div class="movie-glow">
             <img src="TV show2.jpg" alt="TV Show 2">
+            </div>
             <p>Stranger Things</p>
         </div>
 
         <div class="movie-card">
+            <div class="movie-glow">
             <img src="TV show3.png" alt="TV Show 3">
+            </div>
             <p>Games of thrones</p>
         </div>
 
         <div class="movie-card">
+            <div class="movie-glow">
             <img src="TV show4.jpg" alt="TV Show 4">
+            </div>
             <p>Panchayat</p>
         </div>
 
         <div class="movie-card">
+            <div class="movie-glow">
             <img src="TV show5.avif" alt="TV Show 5">
+            </div>
             <p>The Family Man season:3</p>
         </div>
 
          <div class="movie-card">
+            <div class="movie-glow">
             <img src="Tv show6.png" alt="TV Show 6">
+            </div>
             <p>Special ops season:2</p>
         </div>
     </div>
@@ -317,32 +393,44 @@
 
     <div class="movie-row">
         <div class="movie-card">
+            <div class="movie-glow">
             <img src="show1.jpg" alt="TV Show 1">
+            </div>
             <p>The Kapil Sharma Show</p>
         </div>
 
         <div class="movie-card">
+            <div class="movie-glow">
             <img src="show2.jpg" alt="TV Show 2">
+            </div>
             <p>Laughter Chefs</p>
         </div>
 
         <div class="movie-card">
+            <div class="movie-glow">
             <img src="show3.jpg" alt="TV Show 3">
+            </div>
             <p>Comedy Premium League</p>
         </div>
 
         <div class="movie-card">
+            <div class="movie-glow">
             <img src="show4.jpg" alt="TV Show 4">
+            </div>
             <p>Kota Factory</p>
         </div>
 
         <div class="movie-card">
+            <div class="movie-glow">
             <img src="show5.jpg" alt="TV Show 5">
+            </div>
             <p>Bhokaal season:2</p>
         </div>
 
         <div class="movie-card">
+            <div class="movie-glow">
             <img src="show6.jpg" alt="TV Show 6">
+            </div>
             <p>Taaza Khabar season:2</p>
         </div>
     </div>
@@ -355,32 +443,44 @@
 
     <div class="movie-row">
         <div class="movie-card">
+            <div class="movie-glow">
             <img src="kid show1.jpg" alt="Kids TV Shows 1">
+            </div>
             <p>The Bad Guys: Breaking In</p>
         </div>
 
         <div class="movie-card">
+            <div class="movie-glow">
             <img src="kid show2.jpg" alt="Kids TV Shows 2">
+            </div>
             <p>The Boss Baby: Back in Business</p>
         </div>
 
         <div class="movie-card">
+            <div class="movie-glow">
             <img src="kid show3.jpg" alt="Kids TV Shows 3">
+            </div>
             <p>Kung Fu Panda: The Dragon Knight</p>
         </div>
 
         <div class="movie-card">
+            <div class="movie-glow">
             <img src="kid show4.jpg" alt="Kids TV Shows 4">
+            </div>
             <p>Zootopia 2</p>
         </div>
 
         <div class="movie-card">
+            <div class="movie-glow">
             <img src="kid show5.jpg" alt="Kids TV Shows 5">
+            </div>
             <p>Incredibles 2</p>
         </div>
 
         <div class="movie-card">
+         <div class="movie-glow">
             <img src="kid show6.jpg" alt="Kids TV Shows 6">
+            </div>
             <p>Mufasa: The Lion King</p>
         </div>
     </div>
